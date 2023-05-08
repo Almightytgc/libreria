@@ -59,6 +59,7 @@ class Conexion {
         }
         $sentencia->execute();
         $resultados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        //  var_dump($sentencia->errorInfo());
         return $resultados;
     }
     
@@ -66,12 +67,14 @@ class Conexion {
     public function login($consulta, $parametros = array()) {
         $sentencia = $this->conexion->prepare($consulta);
         foreach ($parametros as $nombre => $valor) {
-            $sentencia->bindParam($nombre, $valor);
+            $sentencia->bindParam($nombre, $parametros[$nombre]);
         }
         $sentencia->execute();
         $resultados = $sentencia->fetch();
+        // var_dump($sentencia->errorInfo());
         return $resultados;
     }
+    
 
 
 

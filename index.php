@@ -16,13 +16,18 @@ if ($_POST) {
         ('SELECT *, count(*) as n_usuarios FROM usuarios WHERE usuario=:usuario AND contraseña=:password', 
          array(':usuario' => $usuario, ':password' => $password));
 
-    if ($resultados['n_usuarios'] > 0) {
-        echo "Hola";
-    } else {
-        echo "aaa";
-    }
+         if (intval($resultados['n_usuarios']) > 0) {
+            echo "Hola";
+        } else {
+            echo "aaa";
+        }
+        
+        
+        
 
-    var_dump($resultados);
+    var_dump($usuario);
+    var_dump($password);
+
 }
 
 
