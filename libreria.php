@@ -13,7 +13,7 @@ class Conexion {
         try {
             $this->conexion = new PDO("mysql:host=$this->servidor; dbname=prueba", $this->usuario,$this->contrasenia);
             $this->conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "<h1>Conexión exitosa</h1>";
+            echo "<h1>Conexión exitosa (operación realizada con éxito)</h1>";
             // Con setAttribute(), establecemos el valor de un atributo en la conexión PDO. PDO::ATTR_ERRMODE es 
             // el nombre del atributo que queremos establecer y PDO::ERRMODE_EXCEPTION es el 
             // valor que queremos asignarle. en este caso buscamos establecer un atrbituto de error
@@ -97,6 +97,14 @@ class Conexion {
     // }
 
 
+
+
+
+
+
+
+
+
     //LOGIN
     
     
@@ -130,7 +138,12 @@ class Conexion {
 
 
 
-// //inicio de sesión 
+
+
+
+
+
+// //inicio de sesión largo
 // if ($_POST) {
 
 //     $usuario = $_POST['usuario'];
@@ -168,8 +181,24 @@ class Conexion {
 //     }
 // }
 
+
+
+
+
+
 //linea de código para establecer una ruta base para los hipervinculos
 $url_base = "http://localhost/petBosco2/";
+
+
+
+
+
+
+
+
+
+
+
 
 
 //código para validar si hay una sesión iniciada para controlar el acceso de los usuarios a las páginas

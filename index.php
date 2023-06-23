@@ -5,6 +5,23 @@ include("libreria.php");
 
 $_SESSION['logueado'] = false;
 
+
+//REGISTRO
+// if ($_POST) {
+//     $usuario = $_POST['usuario'];
+//     $password = $_POST['password'];
+
+//     $conexionBD = new Conexion();
+//     $conexion = $conexionBD->obtenerConexion();
+
+//     $resultados = $conexionBD->ejecutarConsulta
+//         ('insert into usuarios (id_usuario, usuario, contraseña) values (NULL, :usuario, :password)', 
+//          array(':usuario' => $usuario, ':password' => $password));
+        
+// }
+
+
+//LOGIN
 if ($_POST) {
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
@@ -17,21 +34,13 @@ if ($_POST) {
          array(':usuario' => $usuario, ':password' => $password));
 
          if (intval($resultados['n_usuarios']) > 0) {
-            echo "Hola";
+            echo "<hr> <center><h2>Hola, iniciaste sesión</h2></center> <hr>";
         } else {
-            echo "aaa";
+            echo "error";
         }
         
-        
-        
-
-    var_dump($usuario);
-    var_dump($password);
 
 }
-
-
-
 
 ?>
 
@@ -49,17 +58,20 @@ if ($_POST) {
         echo "Estás logueado ".$_SESSION['usuario'];
     }
     ?>
-    <h1>registro</h1>
-    <form method="post">
+    <h1>registro (descomentarear)</h1>
+    <hr>
+    <!-- <form method="post">
         <h1>nombres</h1>
-        <input type="text" name="nombres">
+        <input type="text" name="usuario">
         <h1>apellidos</h1>
-        <input type="text" name="apellidos">
+        <input type="text" name="password">
         <input type="submit" value="enviar">
-    </form>
+    </form> -->
 
     <hr>
-    <h1>inicio de sesión</h1>
+    <h1>inicio de sesión (descomentarear)</h1>
+
+
     <br><br>
     <form method="post">
         <h1>usuario</h1>
