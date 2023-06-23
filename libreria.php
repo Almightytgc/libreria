@@ -76,16 +76,8 @@ class Conexion {
     }
 
 
-    //no abrimos sesión porque el login abre una y solo llamamos a la funcións
-    public function cerrarSesion() {
-        session_destroy();
-        header("location: index.php");
-    }
-
     
-
-
-
+    
 
     //ejemplo de uso de la función:
 
