@@ -52,7 +52,7 @@ if ($_POST) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body> wekjfnewkjfnjkew
+<body> 
 <?php 
     if ($_SESSION['logueado'] == true) {
         echo "Estás logueado ".$_SESSION['usuario'];

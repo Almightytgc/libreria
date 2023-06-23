@@ -1,7 +1,7 @@
 <?php
 
 //conexión utilizando programación orientada a objetos
-class Conexion { qjndekwnjkdnf
+class Conexion {
     //propiedades de la clase
     private $servidor = "localhost";
     private $usuario = "root";
@@ -55,7 +55,7 @@ class Conexion { qjndekwnjkdnf
     public function ejecutarConsulta($consulta, $parametros = array()) {
         $sentencia = $this->conexion->prepare($consulta);
         foreach ($parametros as $nombre => $valor) {
-            $sentencia->bindParam($nombre, $valor);aojdkadkñjwef
+            $sentencia->bindParam($nombre, $valor);
         }
         $sentencia->execute();
         $resultados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
