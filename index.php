@@ -1,8 +1,5 @@
 <?php
-session_start();
 include("libreria.php");
-
-
 $_SESSION['logueado'] = false;
 
 
@@ -35,8 +32,11 @@ if ($_POST) {
 
          if (intval($resultados['n_usuarios']) > 0) {
             echo "<hr> <center><h2>Hola, iniciaste sesión</h2></center> <hr>";
+            session_start();
+            $_SESSION['logueado'] = true;
+
         } else {
-            echo "error";
+            echo "error, intentalo de nuevo";
         }
         
 
@@ -55,7 +55,10 @@ if ($_POST) {
 <body> 
 <?php 
     if ($_SESSION['logueado'] == true) {
-        echo "Estás logueado ".$_SESSION['usuario'];
+        echo "<hr> <center><h2>la variable de sesión está en true </h2></center>";
+         echo "<center><a href='cerrar.php'>cerrar sesion</a></center><hr>";
+    } else {
+        echo "<hr> <center><h2>la variable de sesión está en false (inicia sesion) </h2></center> <hr>";
     }
     ?>
     <h1>registro (descomentarear)</h1>
